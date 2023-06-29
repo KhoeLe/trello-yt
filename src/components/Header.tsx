@@ -1,21 +1,42 @@
 "use client";
 import Image from "next/image";
 import { MagnifyingGlassIcon, UserCircleIcon } from "@heroicons/react/24/solid";
-import Avatar from "react-avatar";
-
+// import Avatar from "react-avatar";
+import { useBoardStore } from "../store/useBoardStore";
+import { useState, useEffect } from "react";
+import { fetchSuggestions } from "@/lib/fetchSuggestions";
 function Header() {
+    const [board, searchString, setSearchString] = useBoardStore((state) => [
+        state.board,
+        state.searchString,
+        state.setSearchString,
+    ]);
+
+    const [loading, setLoading] = useState<boolean>(false);
+    const [suggestion, setSuggestions] = useState<string>("");
+
+    useEffect(() => {
+        if (board.columns.size === 0) return;
+
+        setLoading(true);
+
+        const fetchSuggestionsFunc = async () => {
+            const suggestion = await fetchSuggestions(board);
+            setSuggestions(suggestion);
+            setLoading(false);
+        };
+
+        fetchSuggestionsFunc();
+    }, [board]);
+
     return (
         <header>
             <div className="flex flex-col  md:flex-row items-center p-5 bg-gray-500/10 rounded-b-2xl">
-
                 <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-br from-pink-400 to-[#0055D1] rounded-sm filter blur-3xl opacity-50 -z-50" />
                 {/* bg-gradient-to-br from-pink-400 to-[#0055D1] */}
                 {/* filter blur-3xl  => chuyển màu và làm mờ */}
                 {/* opacity-50 => độ mờ */}
                 {/* -z-50 => đẩy xuống dưới */}
-
-
-
                 <Image
                     src={"https://links.papareact.com/c2cdd5"}
                     width={300}
@@ -30,6 +51,8 @@ function Header() {
                         <MagnifyingGlassIcon className="h-6 w-6 text-gray-400" />
 
                         <input
+                            onChange={(e) => setSearchString(e.target.value)}
+                            value={searchString}
                             placeholder="search"
                             type="text"
                             className="flex-1 outline-none p-2 "
@@ -40,14 +63,19 @@ function Header() {
                     </form>
                     {/* avatar */}
 
-                    <Avatar name="Louis Le" round color="#0055D1" size="50" />
+                    {/* <Avatar name="Louis Le" round color="#0055D1" size="50" /> */}
                 </div>
             </div>
             <div className="flex items-center justify-center px-5 md:py-5 ">
-                <p className="flex items-center text-sm font-light pr-5 shadow-xl p-5
+                <p
+                    className="flex items-center text-sm font-light pr-5 shadow-xl p-5
                 rounded-xl w-fit bg-white italic max-w-3xl text-[#0055D1]  ">
-                    <UserCircleIcon className="inline-block h-10 w-10 text-[#0055D1] mr-1 " />
-                    CHAT GPT thinking something like this
+                    <UserCircleIcon
+                        className={`inline-block h-10 w-10 text-[#0055D1] mr-1  ${
+                            loading && "animate-spin"
+                        }`}
+                    />
+                    {suggestion && !loading ? suggestion : "Loading..."}
                 </p>
             </div>
         </header>

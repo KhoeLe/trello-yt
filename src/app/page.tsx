@@ -1,7 +1,9 @@
 import Board from "@/components/Board";
 import Header from "@/components/Header";
+import Modal from "@/components/Modal";
 
-export default function Home() {
+export default async function Home() {
+
     return (
         <main>
             {/* Header */}
@@ -10,6 +12,7 @@ export default function Home() {
             <Board />
             {/* Board */}
             <h1>Hello World ! To day I am develop Trello</h1>
+
         </main>
     );
 }

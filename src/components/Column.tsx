@@ -2,12 +2,12 @@ import { Draggable, Droppable } from "react-beautiful-dnd";
 import TodoCard from "./TodoCard";
 import { PlusCircleIcon } from "@heroicons/react/24/solid";
 import { useModalStore } from "@/store/useModalStore";
+import { useBoardStore } from "@/store/useBoardStore";
 
 interface Props {
-    id: string;
+    id: TypeColumn;
     todos: Todo[];
     index: number;
-    searchString: string;
 }
 const idToColumnText: {
     [key in TypeColumn as string]: string;
@@ -16,12 +16,24 @@ const idToColumnText: {
     inprogress: "In Progress",
     done: "Done",
 };
-function Column({ id, todos, index, searchString }: Props) {
+function Column({ id, todos, index, }: Props) {
 
-    const [openModal, isOpen] = useModalStore((state) => ([
+    const [searchString,setNewTodoTaskType,newTodoTaskType] = useBoardStore((state) => [
+        state.searchString,
+        state.setNewTodoTaskType,
+        state.newTodoTaskType
+    ]);
+
+
+
+    const [openModal] = useModalStore((state) => ([
         state.openModal,
-       state.isOpen,
    ]))
+
+   const handleAddTodo = () => {
+    setNewTodoTaskType(id)
+    openModal();
+   }
 
 
     return (
@@ -105,7 +117,7 @@ function Column({ id, todos, index, searchString }: Props) {
                                     {provided.placeholder}
 
                                     <div className="flex items-end justify-end p-2 ">
-                                        <button onClick={() => openModal()}  className="text-green-500 hover:text-green-600">
+                                        <button onClick={handleAddTodo}  className="text-green-500 hover:text-green-600">
                                             <PlusCircleIcon className="h-10 w-10" />
                                         </button>
                                     </div>

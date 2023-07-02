@@ -1,20 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Trello Board Todo
 
-First, run the development server:
+### Description
+This is a Trello Board Todo App, where you can create a Todo, Doing and Done list. You can also drag and drop the list to the order you want. You can also chat with the AI GPT-3.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### How to run
+1. Clone the repo
+2. cp .env.example .env
+3. yarn install
+4. yarn start
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Todo and Completed
+- [x] Create a React App
+- [x] Create a Trello Board
+- [x] And add the following lists:
+  - [x] Todo
+  - [x] Doing
+  - [x] Done
+- [x] Using Drag and Drop, move the lists to the following order:
+  - [x] Todo
+  - [x] Doing
+  - [x] Done
+- [x] Implementing CHAT GPT
+- [x] Using Zustand, create a store for the Trello Board
+- [x] Using Appwrite API create a collection for the Trello Board and Storage for the images
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
+Project Completed on 2023-07-02

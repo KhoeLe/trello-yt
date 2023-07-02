@@ -4,15 +4,12 @@ import { useEffect } from "react";
 import { DragDropContext, DropResult, Droppable } from "react-beautiful-dnd";
 import Column from "./Column";
 function Board() {
-    // const getBoard = useBoardStore((state) => state.getBoard);
-    // const board = useBoardStore((state) => state.board);
 
-    const [getBoard, board,setBoardState,updateTodoInDB, searchString] = useBoardStore((state) => [
+    const [getBoard, board,setBoardState,updateTodoInDB,] = useBoardStore((state) => [
         state.getBoard,
         state.board,
         state.setBoardState,
-        state.updateTodoInDB,
-        state.searchString
+        state.updateTodoInDB
     ]);
 
 
@@ -129,7 +126,7 @@ function Board() {
                                     id={id}
                                     todos={column.todos}
                                     index={index}
-                                    searchString={searchString}
+
                                 />
                             )
                         )}

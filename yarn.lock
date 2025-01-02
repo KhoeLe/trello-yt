@@ -413,9 +413,9 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-appwrite@^13.0.2:
+appwrite@^13.0.0:
   version "13.0.2"
-  resolved "https://registry.yarnpkg.com/appwrite/-/appwrite-13.0.2.tgz#225f38225a012bb7dc2a70ea777fae363f9188fa"
+  resolved "https://registry.npmjs.org/appwrite/-/appwrite-13.0.2.tgz"
   integrity sha512-ISkUXO8pojDWGx5XqknCwwikgAQye4Ni4FL+Ns8Hg42rXeyehLlmvHGjFOmpS+odT6nsWYUaXzVjV4SZuDorog==
   dependencies:
     cross-fetch "3.1.5"
@@ -738,7 +738,7 @@ copy-anything@^3.0.2:
 
 cross-fetch@3.1.5:
   version "3.1.5"
-  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.5.tgz#e1389f44d9e7ba767907f7af8454787952ab534f"
+  resolved "https://registry.npmjs.org/cross-fetch/-/cross-fetch-3.1.5.tgz"
   integrity sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==
   dependencies:
     node-fetch "2.6.7"
@@ -846,7 +846,7 @@ delayed-stream@~1.0.0:
 
 dequal@^2.0.3:
   version "2.0.3"
-  resolved "https://registry.npmjs.org/dequal/-/dequal-2.0.3.tgz"
+  resolved "https://registry.yarnpkg.com/dequal/-/dequal-2.0.3.tgz#2644214f1997d39ed0ee0ece72335490a7ac67be"
   integrity sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==
 
 detect-node@^2.0.4, detect-node@^2.1.0:
@@ -1335,7 +1335,7 @@ form-data-encoder@1.7.2:
 
 form-data@^2.3.2:
   version "2.5.1"
-  resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.5.1.tgz#f2cbec57b5e59e23716e128fe44d4e5dd23895f4"
+  resolved "https://registry.npmjs.org/form-data/-/form-data-2.5.1.tgz"
   integrity sha512-m21N3WOmEEURgk6B9GLOE4RuWOFf28Lhh9qGYeNlGq4VDXUlJy2th2slBNU8Gp8EzloYZOibZJ7t5ecIrFSjVA==
   dependencies:
     asynckit "^0.4.0"
@@ -1877,7 +1877,7 @@ isexe@^2.0.0:
 
 isomorphic-form-data@2.0.0:
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/isomorphic-form-data/-/isomorphic-form-data-2.0.0.tgz#9f6adf1c4c61ae3aefd8f110ab60fb9b143d6cec"
+  resolved "https://registry.npmjs.org/isomorphic-form-data/-/isomorphic-form-data-2.0.0.tgz"
   integrity sha512-TYgVnXWeESVmQSg4GLVbalmQ+B4NPi/H4eWxqALKj63KsUrcu301YDjBqaOw3h+cbak7Na4Xyps3BiptHtxTfg==
   dependencies:
     form-data "^2.3.2"
@@ -2859,13 +2859,13 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-swr@^2.2.0:
-  version "2.2.4"
-  resolved "https://registry.npmjs.org/swr/-/swr-2.2.4.tgz"
-  integrity sha512-njiZ/4RiIhoOlAaLYDqwz5qH/KZXVilRLvomrx83HjzCWTfa+InyfAjv05PSFxnmLzZkNO9ZfvgoqzAaEI4sGQ==
+swr@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-2.3.0.tgz#66fa45023efd4199f4e7ce608c255709a135943d"
+  integrity sha512-NyZ76wA4yElZWBHzSgEJc28a0u6QZvhb6w0azeL2k7+Q1gAzVK+IqQYXhVOC/mzi+HZIozrZvBVeSeOZNR2bqA==
   dependencies:
-    client-only "^0.0.1"
-    use-sync-external-store "^1.2.0"
+    dequal "^2.0.3"
+    use-sync-external-store "^1.4.0"
 
 synckit@^0.8.5:
   version "0.8.5"
@@ -3085,6 +3085,11 @@ use-sync-external-store@1.2.0, use-sync-external-store@^1.2.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz"
   integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
+
+use-sync-external-store@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.4.0.tgz#adbc795d8eeb47029963016cefdf89dc799fcebc"
+  integrity sha512-9WXSPC5fMv61vaupRkCKCxsPxBocVnwakBEkMIHHpkTTg6icbJtg6jzgtLDm4bl3cSHAca52rYWih0k4K3PfHw==
 
 util-deprecate@^1.0.2:
   version "1.0.2"
